@@ -3,11 +3,15 @@ package com.example.android.miwok;
 import android.app.Activity;
 import android.media.Image;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,6 +19,7 @@ import java.util.ArrayList;
 public class WordAdapter extends ArrayAdapter {
 
     private int mColorResourceId;
+    private int mMediaResourceId;
 
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
@@ -82,6 +87,22 @@ public class WordAdapter extends ArrayAdapter {
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         // Set the background color of the text container View
         textContainer.setBackgroundColor(color);
+
+        LinearLayout playerContainer = (LinearLayout) listItemView.findViewById(R.id.media_view);
+        playerContainer.setBackgroundColor(color);
+        /*playerContainer.setAdapter(this);
+        playerContainer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+                //MediaPlayer mediaPlayer = MediaPlayer.create(this, findViewById(words.get(position).getMediaResourceId()));
+                Log.v("", "item " + new Integer(position).toString());
+                //Toast.makeText(HelloGridView.this, "" + position,
+                //      Toast.LENGTH_SHORT).show();
+            }
+        });*/
+
+        //View listContainer = listItemView.findViewById(R.id.list_container);
+        //listContainer.setBackgroundColor(color);
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -10,13 +11,12 @@
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
         android:background="@color/tan_background"
-        android:layout_weight="1"
         android:src="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:id="@+id/text_container"
         style="@style/ListStyle"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <TextView
@@ -30,5 +30,19 @@
             style="@style/ItemStyle"
             tools:text="one" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/media_view">
+
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:src="@drawable/play" />
     </LinearLayout>
 </LinearLayout>
