@@ -23,8 +23,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
@@ -47,7 +45,7 @@ public class PhrasesActivity extends AppCompatActivity {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             // Now that the sound file has finished playing, release the media player resources.
-            Toast.makeText(PhrasesActivity.this, "completed", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(PhrasesActivity.this, "completed", Toast.LENGTH_SHORT).show();
             releaseMediaPlayer();
         }
     };
